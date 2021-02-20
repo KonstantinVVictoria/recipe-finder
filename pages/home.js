@@ -1,5 +1,7 @@
 import Header from "../components/Header.jsx";
 import Description from "../components/Description.jsx";
+import SubmitImage from "../components/SubmitImage.jsx";
+
 
 const Home = function () {
   return (
@@ -13,6 +15,8 @@ const Home = function () {
         }}
       >
         <Description />
+        <SubmitImage /> 
+
       </div>
     </>
   );
