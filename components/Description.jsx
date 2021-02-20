@@ -1,9 +1,11 @@
 const Description = () => {
   return (
     <div>
-      <img></img>
       <h1>Name of site</h1>
-      <p>Words words words words words</p>
+      <p style={{ display: "compact" }}>
+        Bring some variety to your food experience with *app name*.
+      </p>
+      <p>Upload an image of your favorite food and find similar cuisines</p>
     </div>
   );
 };
