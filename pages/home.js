@@ -2,6 +2,7 @@ import Header from "../components/Header.jsx";
 import Description from "../components/Description.jsx";
 import GetStarted from "../components/GetStarted.jsx";
 import HomeImage from "../components/HomeImage.jsx";
+import SubmitImage from "../components/SubmitImage.jsx";
 
 const Home = function () {
   return (
@@ -25,6 +26,7 @@ const Home = function () {
             <GetStarted />
           </div>
           <HomeImage />
+          <SubmitImage />
         </div>
       </div>
     </>
