@@ -1,4 +1,4 @@
-export default Theme = {
+export default {
   beige: "FFF4DF",
   salmon: "FD8664",
   yellow: "FABE0E",
