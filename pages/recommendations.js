@@ -10,6 +10,8 @@ const Recommendations = function () {
         backgroundColor: "#FFF4DF",
         height: "753px",
         backgroundRepeat: "no-repeat",
+        height: "100vh",
+        backgroundSize: "100%",
       }}
     >
       <Header />
