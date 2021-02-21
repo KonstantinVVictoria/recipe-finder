@@ -1,23 +1,38 @@
 import Theme from "../styles/Theme.js";
+import ReactDOM from "react-dom";
+import React, { useState, Component } from "react";
+import { image } from "@tensorflow/tfjs";
 
 const SubmitImage = () => {
-  console.log(Theme);
+  function fileUploadHandler() {
+    alert("Upload was successful!");
+  }
 
   return (
-    <div style={{ backgroundColor: Theme.beige }}>
+    <div
+      style={{
+        marginRight: "600px",
+        backgroundColor: "beige",
+        position: "fixed",
+      }}
+    >
       <input
         type="button"
         value="X"
         class="closeButton"
         style={{
+          height: "25px",
+          width: "25px",
+          cursor: "pointer",
           marginLeft: "610px",
-          marginTop: "40px",
+          marginTop: "35px",
           marginBottom: "0px",
-          backgroundColor: "transparent",
+          backgroundColor: "salmon",
           borderRadius: "7px",
           borderColor: "black",
         }}
       ></input>
+
       <h1
         style={{
           marginLeft: "60px",
@@ -68,17 +83,25 @@ const SubmitImage = () => {
             />
           </svg>
         </body>
-        <pre style={{ marginLeft: "75px", fontFamily: "sans-serif" }}>
+        <pre
+          style={{
+            marginLeft: "75px",
+            fontFamily: "sans-serif",
+          }}
+        >
           <b>Drop & Drag</b> a file here {"\n"} or click...
         </pre>
         <input
-          type="button"
-          value="Upload"
+          type="file"
+          class="uploadBtn"
+          onChange={fileUploadHandler}
           style={{
+            maxWidth: "120px",
             marginBottom: "20px",
             border: "none",
-            marginLeft: "110px",
+            marginLeft: "90px",
             fontSize: 17,
+            cursor: "pointer",
             borderRadius: "15px",
             backgroundColor: "salmon",
             padding: "5px 20px",
@@ -90,6 +113,7 @@ const SubmitImage = () => {
         value="Submit"
         style={{
           marginBottom: "30px",
+          cursor: "pointer",
           border: "none",
           marginLeft: "540px",
           fontSize: 17,
