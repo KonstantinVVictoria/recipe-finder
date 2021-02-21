@@ -13,7 +13,8 @@ const Home = function () {
       style={{
         backgroundImage: "url(/Home_Gradient.svg)",
         backgroundColor: "#FFF4DF",
-        height: "753px",
+        height: "100vh",
+        backgroundSize: "100%",
         backgroundRepeat: "no-repeat",
       }}
     >
