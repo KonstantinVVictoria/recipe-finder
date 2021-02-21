@@ -14,7 +14,7 @@ const SubmitImage = () => {
 
         
     return (
-        <div style={{marginRight: "600px", backgroundColor: "beige", position: "fixed"}}>
+        <div style={{marginRight: "600px", backgroundColor: Theme.beige, position: "fixed"}}>
             <input type="button" 
             value="X" 
             class="closeButton" 
