@@ -1,8 +1,12 @@
 import "../styles/globals.css";
-
+import Head from "next/head";
 function MyApp({ Component, pageProps }) {
   return (
     <div>
+      <Head>
+        <title>FoodRex</title>
+        <meta property="og:title" content="My page title" key="title" />
+      </Head>
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link
