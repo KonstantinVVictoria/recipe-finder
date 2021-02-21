@@ -1,16 +1,19 @@
-const GetStarted = () => {
+import Theme from "../styles/Theme";
+
+const GetStarted = ({ show }) => {
   return (
     <div>
-      <a
+      <button
         style={{
-          backgroundColor: "#FD8664",
+          backgroundColor: Theme.salmon,
           borderRadius: "15px",
           padding: "3px 20px",
           fontFamily: "Raleway",
         }}
+        onClick={() => show(true)}
       >
         Get Started
-      </a>
+      </button>
     </div>
   );
 };

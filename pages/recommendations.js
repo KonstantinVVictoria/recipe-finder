@@ -1,7 +1,6 @@
 import Header from "../components/Header.jsx";
 import BackButton from "../components/BackButton.jsx";
 import RecDescription from "../components/RecDescription.jsx";
-import Navbar from "../components/Navbar";
 import ItemCarousel from "../components/ItemCarousel";
 
 const Recommendations = function () {
@@ -11,6 +10,8 @@ const Recommendations = function () {
         backgroundColor: "#FFF4DF",
         height: "753px",
         backgroundRepeat: "no-repeat",
+        height: "100vh",
+        backgroundSize: "100%",
       }}
     >
       <Header />

@@ -1,9 +1,52 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ItemsCarousel from "react-items-carousel";
+import Theme from "../styles/Theme";
 
 const ItemCarousel = () => {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
+  const [cards, populateCards] = useState(null);
   const chevronWidth = 40;
+  useEffect(() => {
+    if (!cards) {
+      const recommendations = JSON.parse(window.sessionStorage.getItem("data"))
+        .data;
+      const list = recommendations.data.map(([foodName, pictureLink]) => {
+        return (
+          <div
+            style={{
+              display: "flex",
+              alignItems: "flex-end",
+              height: 400,
+              background: `url(${pictureLink})`,
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }}
+          >
+            <h2
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: 75,
+                backgroundColor: "#4B5454",
+                color: "white",
+                fontFamily: "Raleway",
+                borderRadius: "10px",
+                width: "100%",
+                marginBottom: "0px",
+              }}
+            >
+              {foodName}
+            </h2>
+          </div>
+        );
+      });
+
+      populateCards(list);
+    }
+  });
+
   return (
     <div style={{ padding: `0 ${chevronWidth}px` }}>
       <ItemsCarousel
@@ -14,7 +57,7 @@ const ItemCarousel = () => {
         leftChevron={
           <button
             style={{
-              backgroundColor: "#FD8664",
+              backgroundColor: Theme.beige,
               borderRadius: "6px",
               padding: "5px 10px",
               border: "2px solid",
@@ -40,136 +83,7 @@ const ItemCarousel = () => {
         outsideChevron
         chevronWidth={chevronWidth}
       >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "flex-end",
-            height: 400,
-            background: "#EEE",
-          }}
-        >
-          <img></img>
-          <h2
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: 75,
-              backgroundColor: "#4B5454",
-              color: "white",
-              fontFamily: "Raleway",
-              borderRadius: "10px",
-              width: "500px",
-              marginBottom: "0px",
-            }}
-          >
-            yakisoba
-          </h2>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "flex-end",
-            height: 400,
-            background: "#EEE",
-          }}
-        >
-          <img></img>
-          <h2
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: 75,
-              backgroundColor: "#4B5454",
-              color: "white",
-              fontFamily: "Raleway",
-              borderRadius: "10px",
-              width: "500px",
-              marginBottom: "0px",
-            }}
-          >
-            Ramen{" "}
-          </h2>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "flex-end",
-            height: 400,
-            background: "#EEE",
-          }}
-        >
-          <img></img>
-          <h2
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: 75,
-              backgroundColor: "#4B5454",
-              color: "white",
-              fontFamily: "Raleway",
-              borderRadius: "10px",
-              width: "500px",
-              marginBottom: "0px",
-            }}
-          >
-            Third card
-          </h2>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "flex-end",
-            height: 400,
-            background: "#EEE",
-          }}
-        >
-          <img></img>
-          <h2
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: 75,
-              backgroundColor: "#4B5454",
-              color: "white",
-              fontFamily: "Raleway",
-              borderRadius: "10px",
-              width: "500px",
-              marginBottom: "0px",
-            }}
-          >
-            jelly beans
-          </h2>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "flex-end",
-            height: 400,
-            background: "#EEE",
-          }}
-        >
-          <img></img>
-          <h2
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: 75,
-              backgroundColor: "#4B5454",
-              color: "white",
-              fontFamily: "Raleway",
-              borderRadius: "10px",
-              width: "500px",
-              marginBottom: "0px",
-            }}
-          >
-            Caviar
-          </h2>
-        </div>
+        {cards}
       </ItemsCarousel>
     </div>
   );
