@@ -26,31 +26,13 @@ const SubmitImage = ({ show }) => {
     }
   }
 
-<<<<<<< HEAD
-        
-    return (
-        <div style={{marginRight: "600px", backgroundColor: Theme.beige, position: "fixed"}}>
-            <input type="button" 
-            value="X" 
-            class="closeButton" 
-            style={{ 
-                height: "25px",
-                width: "25px",
-                cursor: "pointer",
-                marginLeft: "610px", 
-                marginTop: "35px", 
-                marginBottom: "0px", 
-                backgroundColor: "salmon", 
-                borderRadius: "7px", 
-                borderColor: "black" }} >
-                </input>
-=======
   return (
     <div
       style={{
         marginRight: "600px",
-        backgroundColor: "beige",
+        backgroundColor: Theme.beige,
         position: "fixed",
+        border: "3px solid grey"
       }}
     >
       <input
@@ -70,7 +52,6 @@ const SubmitImage = ({ show }) => {
         }}
         onClick={() => show(false)}
       ></input>
->>>>>>> 40970a7478e74cb71fa99fc918333df3fdc63459
 
       <h1
         style={{
