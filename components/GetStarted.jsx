@@ -1,16 +1,18 @@
+import Theme from "../styles/Theme";
+
 const GetStarted = () => {
   return (
     <div>
-      <a
+      <button
         style={{
-          backgroundColor: "#FD8664",
+          backgroundColor: Theme.salmon,
           borderRadius: "15px",
           padding: "3px 20px",
           fontFamily: "Raleway",
         }}
       >
         Get Started
-      </a>
+      </button>
     </div>
   );
 };

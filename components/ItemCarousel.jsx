@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ItemsCarousel from "react-items-carousel";
+import Theme from "../styles/Theme";
 
 const ItemCarousel = () => {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
@@ -14,7 +15,7 @@ const ItemCarousel = () => {
         leftChevron={
           <button
             style={{
-              backgroundColor: "#FD8664",
+              backgroundColor: Theme.beige,
               borderRadius: "6px",
               padding: "5px 10px",
               border: "2px solid",
@@ -59,7 +60,7 @@ const ItemCarousel = () => {
               color: "white",
               fontFamily: "Raleway",
               borderRadius: "10px",
-              width: "500px",
+              width: "100%",
               marginBottom: "0px",
             }}
           >
@@ -85,7 +86,7 @@ const ItemCarousel = () => {
               color: "white",
               fontFamily: "Raleway",
               borderRadius: "10px",
-              width: "500px",
+              width: "100%",
               marginBottom: "0px",
             }}
           >
@@ -111,7 +112,7 @@ const ItemCarousel = () => {
               color: "white",
               fontFamily: "Raleway",
               borderRadius: "10px",
-              width: "500px",
+              width: "100%",
               marginBottom: "0px",
             }}
           >
@@ -137,7 +138,7 @@ const ItemCarousel = () => {
               color: "white",
               fontFamily: "Raleway",
               borderRadius: "10px",
-              width: "500px",
+              width: "100%",
               marginBottom: "0px",
             }}
           >
@@ -163,7 +164,7 @@ const ItemCarousel = () => {
               color: "white",
               fontFamily: "Raleway",
               borderRadius: "10px",
-              width: "500px",
+              width: "100%",
               marginBottom: "0px",
             }}
           >

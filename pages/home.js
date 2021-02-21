@@ -12,7 +12,7 @@ const Home = function () {
     <div
       style={{
         backgroundImage: "url(/Home_Gradient.svg)",
-        backgroundColor: "#FFF4DF",
+        backgroundColor: Theme.beige,
         height: "753px",
         backgroundRepeat: "no-repeat",
       }}
