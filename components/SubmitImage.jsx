@@ -120,9 +120,7 @@ const SubmitImage = ({ show }) => {
                   marginLeft: "75px",
                   fontFamily: "sans-serif",
                 }}
-              >
-                <b>Drop & Drag</b> a file here {"\n"} or click...
-              </pre>
+              ></pre>
             </div>
           )}
         </div>

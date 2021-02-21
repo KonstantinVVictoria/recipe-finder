@@ -13,7 +13,7 @@ const RecDescription = () => {
         Recommendations
       </h1>
       <p style={{ fontFamily: "Raleway", marginBottom: "40px" }}>
-        According to what you uplodaded, here are some foods that we think you
+        According to what you uploaded, here are some foods that we think you
         would also enjoy!
       </p>
     </div>
