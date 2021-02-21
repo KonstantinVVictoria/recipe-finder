@@ -1,45 +1,52 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ItemsCarousel from "react-items-carousel";
 import Theme from "../styles/Theme";
 
 const ItemCarousel = () => {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
+  const [cards, populateCards] = useState(null);
   const chevronWidth = 40;
-  const recommendations = JSON.parse(window.sessionStorage.getItem("data"))
-    .data;
-  console.log(recommendations);
-  const cards = recommendations.data.map(([foodName, pictureLink]) => {
-    return (
-      <div
-        style={{
-          display: "flex",
-          alignItems: "flex-end",
-          height: 400,
-          background: `url(${pictureLink})`,
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-        }}
-      >
-        <h2
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: 75,
-            backgroundColor: "#4B5454",
-            color: "white",
-            fontFamily: "Raleway",
-            borderRadius: "10px",
-            width: "100%",
-            marginBottom: "0px",
-          }}
-        >
-          {foodName}
-        </h2>
-      </div>
-    );
+  useEffect(() => {
+    if (!cards) {
+      const recommendations = JSON.parse(window.sessionStorage.getItem("data"))
+        .data;
+      const list = recommendations.data.map(([foodName, pictureLink]) => {
+        return (
+          <div
+            style={{
+              display: "flex",
+              alignItems: "flex-end",
+              height: 400,
+              background: `url(${pictureLink})`,
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }}
+          >
+            <h2
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: 75,
+                backgroundColor: "#4B5454",
+                color: "white",
+                fontFamily: "Raleway",
+                borderRadius: "10px",
+                width: "100%",
+                marginBottom: "0px",
+              }}
+            >
+              {foodName}
+            </h2>
+          </div>
+        );
+      });
+
+      populateCards(list);
+    }
   });
+
   return (
     <div style={{ padding: `0 ${chevronWidth}px` }}>
       <ItemsCarousel
