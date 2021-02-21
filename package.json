@@ -10,9 +10,11 @@
   "dependencies": {
     "@tensorflow/tfjs": "^2.8.6",
     "next": "10.0.7",
+    "node-fetch": "^2.6.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-images-upload": "^1.2.8",
-    "seedrandom": "^3.0.5"
+    "react-items-carousel": "^2.8.0",
+    "seedrandom": "^3.0.5",
+    "unsplash-js": "^7.0.4"
   }
 }

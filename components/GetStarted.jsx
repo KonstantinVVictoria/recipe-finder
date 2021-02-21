@@ -5,7 +5,8 @@ const GetStarted = () => {
         style={{
           backgroundColor: "#FD8664",
           borderRadius: "15px",
-          padding: "5px 15px",
+          padding: "3px 20px",
+          fontFamily: "Raleway",
         }}
       >
         Get Started
