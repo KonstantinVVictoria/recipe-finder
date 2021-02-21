@@ -7,8 +7,10 @@ const GetStarted = ({ show }) => {
         style={{
           backgroundColor: Theme.salmon,
           borderRadius: "15px",
-          padding: "3px 20px",
+          padding: "3px 30px",
           fontFamily: "Raleway",
+          border: "none",
+          fontSize: "1.2em",
         }}
         onClick={() => show(true)}
       >

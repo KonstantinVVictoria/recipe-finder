@@ -21,10 +21,17 @@ const func = ({ src, submit }) => {
   });
 
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <div
+      style={{ display: "flex", justifyContent: "center", margin: "10px 0px" }}
+    >
       <img
         id="test-image"
-        style={{ height: "224px", width: "224px", objectFit: "cover" }}
+        style={{
+          height: "224px",
+          width: "224px",
+          objectFit: "cover",
+          borderRadius: "25px",
+        }}
         src={src}
       ></img>
     </div>
@@ -32,9 +39,9 @@ const func = ({ src, submit }) => {
 };
 
 const predict = async (tensor, changeReady) => {
-  // const modelUrl =
-  //   "https://tfhub.dev/google/imagenet/mobilenet_v2_140_224/classification/2";
-  // const model = await tf.loadGraphModel(modelUrl, { fromTFHub: true });
+  const loading = document.getElementById("loading");
+  loading.style.visibility = "visible";
+
   const model = await tf.loadGraphModel("/AIModel/model.json");
   const label = await fetch("/AIModel/label.json").then((response) =>
     response.json()
@@ -47,7 +54,6 @@ const predict = async (tensor, changeReady) => {
   let sortedPrediction = predictionLabeled.sort(function (a, b) {
     return b[0] - a[0];
   });
-  console.log(sortedPrediction);
   const topFive = sortedPrediction.slice(0, 5);
   const queries = topFive.map(([probability, name]) => {
     return name;
@@ -56,7 +62,8 @@ const predict = async (tensor, changeReady) => {
 };
 
 const getImages = async (queries, changeReady) => {
-  console.log(queries);
+  const submitSection = document.getElementById("submit-section");
+  submitSection.style.opacity = "0";
   const data = await fetch("/api/image-request", {
     method: "POST",
     headers: {

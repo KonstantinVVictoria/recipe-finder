@@ -21,6 +21,11 @@ const ItemCarousel = () => {
               backgroundSize: "contain",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
+              overflow: "hidden",
+              borderRadius: "25px",
+              backgroundColor: "#4B5454",
+              boxShadow: "0px 0px 20px 1px rgba(0,0,0,0.5)",
+              margin: "20px 0px",
             }}
           >
             <h2
@@ -57,7 +62,7 @@ const ItemCarousel = () => {
         leftChevron={
           <button
             style={{
-              backgroundColor: Theme.beige,
+              backgroundColor: "#FD8664",
               borderRadius: "6px",
               padding: "5px 10px",
               border: "2px solid",

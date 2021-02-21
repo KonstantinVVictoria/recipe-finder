@@ -12,7 +12,7 @@ const BackButton = () => {
           border: "0px none",
           backgroundColor: "transparent",
         }}
-        onClick={() => router.push("/home")}
+        onClick={() => router.push("/")}
       >
         <p
           style={{

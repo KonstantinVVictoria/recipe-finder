@@ -1,67 +1,69 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import tf from "@tensorflow/tfjs";
-const func = async () => {};
-
+import Header from "../components/Header.jsx";
+import Description from "../components/Description.jsx";
+import GetStarted from "../components/GetStarted.jsx";
+import HomeImage from "../components/HomeImage.jsx";
+import SubmitImage from "../components/SubmitImage.jsx";
+import Theme from "../styles/Theme";
+import { useState } from "react";
+import ReactLoading from "react-loading";
 export default function Home() {
+  let [isShow, changeShow] = useState(false);
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div
+      style={{
+        backgroundImage: "url(/Home_Gradient.svg)",
+        backgroundColor: Theme.beige,
+        height: "100vh",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "100% 20%",
+        maxHeight: "100vh",
+      }}
+    >
+      <Header />
+      <div
+        style={{ display: "flex", justifyContent: "center", height: "89vh" }}
+      >
+        <div
+          id="loading"
+          style={{
+            position: "fixed",
+            height: "30%",
+            width: "30%",
+            marginTop: "5%",
+            visibility: "hidden",
+            zIndex: "100",
+          }}
         >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+          <ReactLoading
+            type={"spin"}
+            color={Theme.salmon}
+            height={"100%"}
+            width={"100%"}
+          />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              textAlign: "Left",
+            }}
+          >
+            <Description />
+            <GetStarted show={changeShow} />
+          </div>
+          <HomeImage />
+          {isShow ? <SubmitImage show={changeShow} /> : null}
+        </div>
+      </div>
     </div>
   );
 }

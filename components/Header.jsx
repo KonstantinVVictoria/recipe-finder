@@ -1,16 +1,30 @@
 const Header = () => {
   return (
-    <div style={{ display: "flex" }}>
+    <div
+      style={{
+        display: "flex",
+        height: "11vh",
+        maxHeight: "11vh",
+        alignItems: "flex-end",
+      }}
+    >
       <img
-        style={{ marginTop: "30px", marginLeft: "50px", width: "45px" }}
+        style={{
+          height: "90%",
+          padding: "1%",
+          marginLeft: "50px",
+        }}
         src="/Logo.svg"
       ></img>
       <h2
         style={{
-          marginTop: "30px",
           color: "black",
-          marginLeft: "5px",
+          margin: "0% 1px",
           fontFamily: "Quicksand",
+          display: "flex",
+          height: "90%",
+          alignItems: "center",
+          fontWeight: "900",
         }}
       >
         FoodRex

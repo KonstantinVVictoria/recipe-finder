@@ -3,10 +3,11 @@ import ReactDOM from "react-dom";
 import React, { useState, Component } from "react";
 import { image } from "@tensorflow/tfjs";
 import UploadFile from "./UploadFile";
+import Home from "../pages/index.js";
 const SubmitImage = ({ show }) => {
   const [state, changeState] = useState({
     showUploaded: false,
-    img: {},
+    img: null,
     submit: false,
   });
   function fileUploadHandler() {
@@ -28,11 +29,14 @@ const SubmitImage = ({ show }) => {
 
   return (
     <div
+      id="submit-section"
       style={{
-        marginRight: "600px",
+        left: "50%",
         backgroundColor: Theme.beige,
         position: "fixed",
-        border: "3px solid grey"
+        borderRadius: "25px",
+        boxShadow: "0px 0px 20px 1px rgba(0,0,0,0.5)",
+        opacity: "0.96",
       }}
     >
       <input
@@ -43,8 +47,8 @@ const SubmitImage = ({ show }) => {
           height: "25px",
           width: "25px",
           cursor: "pointer",
-          marginLeft: "610px",
-          marginTop: "35px",
+          marginLeft: "90%",
+          marginTop: "25px",
           marginBottom: "0px",
           backgroundColor: "salmon",
           borderRadius: "7px",
@@ -59,6 +63,8 @@ const SubmitImage = ({ show }) => {
           marginTop: "0px",
           marginRight: "300px",
           fontWeight: "normal",
+          fontFamily: "Quicksand",
+          marginBottom: "0px",
         }}
       >
         Upload an image
@@ -66,9 +72,9 @@ const SubmitImage = ({ show }) => {
       <pre
         style={{
           marginLeft: "60px",
-          marginTop: "40px",
+          marginTop: "20px",
           fontWeight: "lighter",
-          fontFamily: "sans-serif",
+          fontFamily: "Quicksand",
         }}
       >
         Pick a food of your choosing, upload and submit {"\n"} for a list of
@@ -77,7 +83,7 @@ const SubmitImage = ({ show }) => {
       <div
         style={{
           borderRadius: "15px",
-          border: "7px solid gray",
+          border: "5px solid gray",
           marginLeft: "60px",
           marginRight: "300px",
           overflow: "hidden",
@@ -121,36 +127,59 @@ const SubmitImage = ({ show }) => {
           )}
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <input
-            id="file"
-            type="file"
-            class="uploadBtn"
-            accept="image/png, image/jpeg"
-            onChange={fileUploadHandler}
+          <div
             style={{
+              backgroundColor: Theme.salmon,
+              borderRadius: "15px",
               maxWidth: "120px",
               marginBottom: "20px",
-              border: "none",
-              fontSize: 17,
-              cursor: "pointer",
-              borderRadius: "15px",
-              backgroundColor: "salmon",
-              padding: "5px 20px",
+              position: "relative",
             }}
-          ></input>
+          >
+            <div
+              style={{
+                fontFamily: "Quicksand",
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                pointerEvents: "none",
+              }}
+            >
+              Upload
+            </div>
+            <input
+              id="file"
+              type="file"
+              accept="image/png, image/jpeg"
+              onChange={fileUploadHandler}
+              style={{
+                border: "none",
+                cursor: "pointer",
+                background: "none",
+                padding: "5px 20px",
+                outline: "none",
+                textIndent: "-999em",
+              }}
+            />
+          </div>
         </div>
       </div>
       <input
         type="button"
         value="Submit"
-        onClick={() =>
-          changeState({ showUploaded: true, img: state.img, submit: true })
-        }
+        onClick={() => {
+          if (state.img)
+            changeState({ showUploaded: true, img: state.img, submit: true });
+        }}
         style={{
           marginBottom: "30px",
           cursor: "pointer",
           border: "none",
-          marginLeft: "540px",
+          marginLeft: "80%",
+          marginRight: "20px",
           fontSize: 17,
           borderRadius: "15px",
           backgroundColor: "salmon",

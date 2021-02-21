@@ -34,7 +34,9 @@ const Recommendations = function () {
             <RecDescription />
           </div>
         </div>
-        <ItemCarousel />
+        <div style={{ padding: "0vh 7vw" }}>
+          <ItemCarousel />
+        </div>
       </div>
     </div>
   );
