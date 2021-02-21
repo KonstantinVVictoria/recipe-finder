@@ -9,7 +9,14 @@ import LoadCS from "../lib/LoadCS";
 const Home = function () {
   const UploadFile = LoadCS("UploadFile");
   return (
-    <>
+    <div
+      style={{
+        backgroundImage: "url(/Home_Gradient.svg)",
+        backgroundColor: "#FFF4DF",
+        height: "753px",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <Header />
       <div style={{ display: "flex", justifyContent: "center" }}>
         <div
@@ -21,8 +28,7 @@ const Home = function () {
             style={{
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
-              textAlign: "center",
+              textAlign: "Left",
             }}
           >
             <Description />
@@ -32,7 +38,7 @@ const Home = function () {
           <SubmitImage />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

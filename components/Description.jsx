@@ -1,11 +1,11 @@
 const Description = () => {
   return (
-    <div>
-      <h1>Name of site</h1>
-      <p style={{ display: "compact" }}>
-        Bring some variety to your food experience with *app name*.
+    <div style={{ marginBottom: "20px" }}>
+      <h1 style={{ fontFamily: "Quicksand" }}>FoodRex</h1>
+      <p style={{ fontFamily: "Raleway", width: "375px" }}>
+        Bring some variety to your food experience with Food Rex. Upload an
+        image of your favorite food and discover similar cuisines.
       </p>
-      <p>Upload an image of your favorite food and find similar cuisines</p>
     </div>
   );
 };

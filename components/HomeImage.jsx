@@ -1,6 +1,6 @@
 const HomeImage = () => {
   return (
-    <div>
+    <div style={{ marginLeft: "60px" }}>
       <p>place holder</p>
     </div>
   );
