@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import React, { useState, Component } from "react";
 import { image } from "@tensorflow/tfjs";
 
-const SubmitImage = () => {
+const SubmitImage = ({ show }) => {
   function fileUploadHandler() {
     alert("Upload was successful!");
   }
@@ -31,6 +31,7 @@ const SubmitImage = () => {
           borderRadius: "7px",
           borderColor: "black",
         }}
+        onClick={() => show(false)}
       ></input>
 
       <h1

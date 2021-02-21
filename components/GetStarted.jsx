@@ -1,6 +1,6 @@
 import Theme from "../styles/Theme";
 
-const GetStarted = () => {
+const GetStarted = ({ show }) => {
   return (
     <div>
       <button
@@ -10,6 +10,7 @@ const GetStarted = () => {
           padding: "3px 20px",
           fontFamily: "Raleway",
         }}
+        onClick={() => show(true)}
       >
         Get Started
       </button>

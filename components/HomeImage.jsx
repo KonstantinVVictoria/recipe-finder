@@ -1,7 +1,7 @@
 const HomeImage = () => {
   return (
     <div style={{ marginLeft: "60px" }}>
-      <p>place holder</p>
+      <img style={{ width: "600px" }} src="/dinoillustration.png"></img>
     </div>
   );
 };

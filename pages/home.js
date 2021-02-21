@@ -5,15 +5,19 @@ import HomeImage from "../components/HomeImage.jsx";
 import SubmitImage from "../components/SubmitImage.jsx";
 import Theme from "../styles/Theme";
 import LoadCS from "../lib/LoadCS";
+import { useState } from "react";
 
 const Home = function () {
   const UploadFile = LoadCS("UploadFile");
+  let [isShow, changeShow] = useState(false);
+
   return (
     <div
       style={{
         backgroundImage: "url(/Home_Gradient.svg)",
         backgroundColor: Theme.beige,
-        height: "753px",
+        height: "100vh",
+        backgroundSize: "100%",
         backgroundRepeat: "no-repeat",
       }}
     >
@@ -32,10 +36,10 @@ const Home = function () {
             }}
           >
             <Description />
-            <GetStarted />
+            <GetStarted show={changeShow} />
           </div>
           <HomeImage />
-          <SubmitImage />
+          {isShow ? <SubmitImage show={changeShow} /> : null}
         </div>
       </div>
     </div>
