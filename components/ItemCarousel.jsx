@@ -5,7 +5,8 @@ import Theme from "../styles/Theme";
 const ItemCarousel = () => {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
   const chevronWidth = 40;
-  const recommendations = JSON.parse(sessionStorage.getItem("data")).data;
+  const recommendations = JSON.parse(window.sessionStorage.getItem("data"))
+    .data;
   console.log(recommendations);
   const cards = recommendations.data.map(([foodName, pictureLink]) => {
     return (

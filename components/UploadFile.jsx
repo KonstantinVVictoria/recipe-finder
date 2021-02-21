@@ -64,7 +64,7 @@ const getImages = async (queries, changeReady) => {
     },
     body: JSON.stringify({ queries: queries }),
   }).then((response) => response.json());
-  sessionStorage.setItem("data", JSON.stringify({ data: data }));
+  window.sessionStorage.setItem("data", JSON.stringify({ data: data }));
   changeReady(true);
 };
 
